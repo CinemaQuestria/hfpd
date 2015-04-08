@@ -1,10 +1,9 @@
-{-# LANGUAGE OverloadedStrings #-}
 import Control.Concurrent
 import Control.Monad
+import Text.Printf
 import Network.Socket hiding (send, sendTo, recv, recvFrom)
 import Network.Socket.ByteString
 import Data.ByteString.Char8
-
 
 main :: IO ()
 main = do
@@ -15,8 +14,9 @@ main = do
 
 mainLoop :: Socket -> IO ()
 mainLoop sock = forever $ do
-    (client,_) <- accept sock
+    (client,host) <- accept sock
     forkIO $ do
+        printf "connection from %s\n" (show host)
         send client payload
         sClose client
 
