@@ -21,4 +21,4 @@ mainLoop sock = forever $ do
         sClose client
 
 payload :: ByteString
-payload = "<?xml version=\"1.a\"?><!DOCTYPE cross-domain-policy SYSTEM \"/xml/dtds/cross-domain-policy.dtd\"><cross-domain-policy><site-control permitted-cross-domain-policies=\"master-only\"/><allow-access-from domain=\"*\" to-ports=\"6667\" /></cross-domain-policy>"
+payload = pack "<?xml version=\"1.a\"?><!DOCTYPE cross-domain-policy SYSTEM \"/xml/dtds/cross-domain-policy.dtd\"><cross-domain-policy><site-control permitted-cross-domain-policies=\"master-only\"/><allow-access-from domain=\"*\" to-ports=\"6667\" /></cross-domain-policy>"
