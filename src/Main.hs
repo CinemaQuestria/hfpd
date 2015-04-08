@@ -1,10 +1,10 @@
+{-# LANGUAGE OverloadedStrings #-}
 import Control.Concurrent
 import Control.Monad
 import Network.Socket hiding (send, sendTo, recv, recvFrom)
 import Network.Socket.ByteString
 import Data.ByteString.Char8
 
-{-# LANGUAGE OverloadedStrings #-}
 
 main :: IO ()
 main = do
