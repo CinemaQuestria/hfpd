@@ -1,0 +1,8 @@
+FROM ubuntu:trusty
+
+RUN sudo apt-get update && sudo apt-get install libgmp10
+
+ADD dist/build/hfpd/hfpd /hfpd
+
+EXPOSE 8430
+CMD /hfpd
